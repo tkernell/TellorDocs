@@ -1,13 +1,7 @@
 # Data feed IDs
 
-## The Tellor system is a way to push data on-chain.  The **pieces of data that get pushed on-chain are specified off-chain in the submitter code.**
+The Tellor system allows users to request specific pieces of data, and reporters can then submit those values. Every piece of data within the Tellor system is associated with a specific identifier, known as the `queryId`. When a user requests data using `tipQuery` and when a reporter submits data using `submitValue`, they have to input both the `queryId` and `queryData`. The `queryData` tells reporters how to fulfill the data query, while also informing voters how to verify the data in a dispute. The `queryId` is defined as the keccak256 hash of the `queryData` field.
 
 {% hint style="info" %}
-Note that each Data ID corresponds to a specific data point.  Example:  Data ID 4 is BTC/USD in a 24 Hour Time Weighted Average.
+Note: Tellor legacy queries have IDs 1 through 100. Their queryId's are NOT defined as the hash of queryData.
 {% endhint %}
-
-The Tellor mining system is set up to pull data to generate these values to submit on-chain once a correct nonce is mined. These specific APIs are just suggestions. The system is not guaranteed to work for everyone. It is up to the consensus of the Tellor token holders to determine what a correct value is.  In our example, Data ID 4 is BTC/USD. If the APIs all go down, it is the responsibility of the miner to still submit a valid BTC/USD price. If they do not, they risk being disputed and slashed.  
-
-
-
-

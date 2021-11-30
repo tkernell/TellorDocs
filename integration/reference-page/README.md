@@ -1,52 +1,38 @@
 # Reference
 
-## Contract addresses, Data Request IDs, and Variable Hashes
+## Contract addresses and Variable Hashes
 
-## [Oracle](https://github.com/tellor-io/TellorCore)
+## [Tellor](https://github.com/tellor-io/tellorX)
 
-Mainnet **-**[ `0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0`](https://etherscan.io/address/0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0)  
-Rinkeby **-**[ `0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0`](https://rinkeby.etherscan.io/address/0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0)\`\`
+#### Mainnet
+
+Master:[ `0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0`](https://etherscan.io/address/0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0)
+
+Controller:[ `0xf98624E9924CAA2cbD21cC6288215Ec2ef7cFE80`](https://etherscan.io/address/0xf98624E9924CAA2cbD21cC6288215Ec2ef7cFE80)
+
+Oracle:[ `0xe8218cACb0a5421BC6409e498d9f8CC8869945ea`](https://etherscan.io/address/0xe8218cACb0a5421BC6409e498d9f8CC8869945ea)
+
+Governance:[ `0x51d4088d4EeE00Ae4c55f46E0673e9997121DB00`](https://etherscan.io/address/0x51d4088d4EeE00Ae4c55f46E0673e9997121DB00)
+
+Treasury:[ `0x3b0f3eaEFaAc9f8F7FDe406919ecEb5270fE0607`](https://etherscan.io/address/0x3b0f3eaEFaAc9f8F7FDe406919ecEb5270fE0607)
+
+#### Rinkeby
+
+Master:[ `0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0`](https://rinkeby.etherscan.io/address/0x88dF592F8eb5D7Bd38bFeF7dEb0fBc02cf3778a0)
+
+Controller:[ `0x0f2B0a8fa0f60459f51E452273C879eb32555e91`](https://rinkeby.etherscan.io/address/0x0f2B0a8fa0f60459f51E452273C879eb32555e91)
+
+Oracle:[ `0x18431fd88adF138e8b979A7246eb58EA7126ea16`](https://rinkeby.etherscan.io/address/0x18431fd88adF138e8b979A7246eb58EA7126ea16)
+
+Governance:[ `0xA64Bb0078eB80c97484f3f09Adb47b9B73CBcA00`](https://rinkeby.etherscan.io/address/0xA64Bb0078eB80c97484f3f09Adb47b9B73CBcA00)
+
+Treasury:[ `0x2dB91443f2b562B8b2B2e8E4fC0A3EDD6c195147`](https://rinkeby.etherscan.io/address/0x2dB91443f2b562B8b2B2e8E4fC0A3EDD6c195147)
+
 
 ## [Playground](https://github.com/tellor-io/TellorPlayground)
 
-Rinkeby: [`0x20374E579832859f180536A69093A126Db1c8aE9`](https://rinkeby.etherscan.io/address/0x20374E579832859f180536A69093A126Db1c8aE9#code)
+Rinkeby: [`0xA70c03D70833f000c19AAcbb682671E496DF0177`](https://rinkeby.etherscan.io/address/0xA70c03D70833f000c19AAcbb682671E496DF0177#code)
 
-Kovan: [`0x20374E579832859f180536A69093A126Db1c8aE9`](https://kovan.etherscan.io/address/0x20374E579832859f180536A69093A126Db1c8aE9#code)
 
-Ropsten: [`0x20374E579832859f180536A69093A126Db1c8aE9`](https://ropsten.etherscan.io/address/0x20374E579832859f180536A69093A126Db1c8aE9#code)
-
-Goerli: [`0x20374E579832859f180536A69093A126Db1c8aE9`](https://goerli.etherscan.io/address/0x20374E579832859f180536A69093A126Db1c8aE9#code)
-
-BSC Testnet: [`0xbc2f9E092ac5CED686440E5062D11D6543202B24`](https://testnet.bscscan.com/address/0xbc2f9E092ac5CED686440E5062D11D6543202B24#code)\`\`
-
-Polygon Mumbai Testnet: [`0xbc2f9E092ac5CED686440E5062D11D6543202B24`](https://explorer-mumbai.maticvigil.com/address/0xbc2f9E092ac5CED686440E5062D11D6543202B24/contracts)\`\`
-
-Arbitrum Testnet: [`0xbc2f9E092ac5CED686440E5062D11D6543202B24`](https://explorer.arbitrum.io/#/address/0xbc2f9E092ac5CED686440E5062D11D6543202B24)\`\`
-
-## [**TellorAccess**](https://github.com/tellor-io/tellorAccess)\*\*\*\*
-
-Rinkeby: [`0x43A4D85E1a066e3163C543E5b613a972354dAeFD`](https://rinkeby.etherscan.io/address/0x43A4D85E1a066e3163C543E5b613a972354dAeFD#code)\`\`
-
-BSC Testnet: [`0x43A4D85E1a066e3163C543E5b613a972354dAeFD`](https://testnet.bscscan.com/address/0x43A4D85E1a066e3163C543E5b613a972354dAeFD#code)\`\`
-
-Arbitrum Testnet: [`0x43A4D85E1a066e3163C543E5b613a972354dAeFD`](https://explorer.arbitrum.io/#/address/0x43a4d85e1a066e3163c543e5b613a972354daefd)\`\`
-
-## \*\*\*\*[**Fellowship**](https://github.com/tellor-io/fellowship)\*\*\*\*
-
-Fellowship Rinkeby: [`0x69BCcCC7CD7Ba08FE0FB6C3d31Ed5a7b412F40aD`](https://rinkeby.etherscan.io/address/0x69BCcCC7CD7Ba08FE0FB6C3d31Ed5a7b412F40aD#code)\`\`
-
-Rivendell Rinkeby: [`0x677828427a23C046A2506FB0eebb53f5e674131b`](https://rinkeby.etherscan.io/address/0x677828427a23C046A2506FB0eebb53f5e674131b#code)\`\`
-
-Fellowship Mainnet: [`0xCA240cf523cD9163C2A8465B2642B04749704625`](https://etherscan.io/address/0xCA240cf523cD9163C2A8465B2642B04749704625#code)\`\`
-
-Rivendell Mainnet: [`0xd53412ff046B13318C05e923919d8dB07C3cB3E9`](https://etherscan.io/address/0xd53412ff046B13318C05e923919d8dB07C3cB3E9#code)\`\`
-
-## [Lens](https://github.com/tellor-io/lens)
-
-Mainet - [`0xb2b6c6232d38fae21656703cac5a74e5314741d4`](https://etherscan.io/address/0xb2b6c6232d38fae21656703cac5a74e5314741d4)  
-Rinkeby - [`0x577417CFaF319a1fAD90aA135E3848D2C00e68CF`](https://etherscan.io/address/0x577417CFaF319a1fAD90aA135E3848D2C00e68CF#readContract)\`\`
 
 {% page-ref page="variable-hashes.md" %}
-
-
-

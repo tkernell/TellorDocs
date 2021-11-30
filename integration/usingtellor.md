@@ -15,49 +15,42 @@ Before calling a function to update your values, you should first just check if 
 
 To check when the value was last updated, you can run the following usingTellor function:
 
-```text
- function getCurrentValue(uint256 _requestId) public view returns (bool ifRetrieve, uint256 value, uint256 _timestampRetrieved);
+```solidity
+ function getCurrentValue(bytes32 _queryId) public view returns (bool _ifRetrieve, bytes _value, uint256 _timestampRetrieved);
 ```
 
 The last returned value is the timestamp last updated.
 
 #### Adding a Tip
 
-If the time the value was last updated is not sufficient, you can add a tip to your requestID in order to get it mined.
+If the time the value was last updated is not sufficient, you can add a tip to your queryId in order to get it reported.
 
-```text
-    addTip(uint _requestId, uint _tip)
+```solidity
+ function tipQuery(bytes32 _queryId, uint256 _tip, bytes memory _queryData)
 ```
 
-Tellor works by selecting the top five tipped requests for each Tellor block. As an example, assume ID's \[1,2,3,4,5\] are currently being mined. If ID's \[6,7,8,9,10,11,12\] have corresponding tips of \[10,20,30,40,50,60,70\], then once the first ID's are mined, the ID's with the highest tipes \(ID's 8-12 in this case\) will be chosen. ID 6 and 7 will not be mined and will have to wait for a block where they are the highest tipped \(this is very similar to gas prices and transaction fees on Ethereum or Bitcoin\). If you for instance are ID 6 and want to get your ID included in the next block, you will need to tip &gt;20 \(you have 10 and need over 30\).
+Tellor works by allowing any reporter to submit for any queryId. Each staked reporter just has to wait 12 hours after submitting in order to submit again. It stands to reason that, in order for a reporter to want to submit data, they have to be able to cover their gas costs and then earn a little more on top of that. When adding a tip, you should consider how much a reporter will have to pay in gas to report the data. You can get the current reward for a queryId with the following function, which returns the tip amount first, and then the time based reward:
 
-In order to see how much you will need to tip, you can see the current ID's on deck and their corresponding tips using the following function in the main Tellor contract:
-
-```text
- function getNewVariablesOnDeck() public view returns (uint256[5] memory idsOnDeck, uint256[5] memory tipsOnDeck)
+```solidity
+ function getCurrentReward(bytes32 _queryId) public view returns(uint256, uint256)
 ```
-
-Note that once you call for an update, you will need to wait until at least the next block is mined to get an update. Currently, Tellor blocks are 5 minutes.
 
 ### Monitoring Values and Disputing
 
-Once Values are on-chain, we recommend you don't just take them right away. Tellor has a robust network of miners and watchdogs that are valiantly checking and ensuring accuracy, but the best person to know if your data is correct is you.
+Once values are on-chain, we recommend you don't just take them right away. Tellor has a robust network of reporters and watchdogs that are valiantly checking and ensuring accuracy, but the best person to know if your data is correct is you.
 
-You can monitor values and submit disputes by either reading the value on-chain:
+You can monitor values and submit disputes by reading the value on-chain:
 
-```text
- function getCurrentValue(uint256 _requestId) public view returns (bool ifRetrieve, uint256 value, uint256 _timestampRetrieved);
+```solidity
+ function getCurrentValue(bytes32 _queryId) public view returns (bool ifRetrieve, bytes value, uint256 _timestampRetrieved);
 
- function beginDispute(TellorStorage.TellorStorageStruct storage self, uint256 _requestId, uint256 _timestamp, uint256 _minerIndex) public;
+ function beginDispute(bytes32 _queryId, uint256 _timestamp) external
 ```
 
-Or using the [Tellor Dispute Center](https://disputes.tellorscan.com)
+Dispute fees may be costly, but are returned \(along with a stake reward\) if the dispute is valid.
 
-Disputes cost a lot of TRB, but are returned \(along with a one stake reward\) if the dispute was valid.
-
-Once the dispute goes through, be sure to request your data again, so the miners have another chance to push through a valid price.
+Once the dispute goes through, be sure to request your data again so the reporters have another chance to push through a valid price.
 
 #### Automating Jobs
 
-To automate adding a tip on a certain request ID by time or volatility, as well as scheduling other Tellor related tasks, we recommend \(and use\) [Buidlhub](https://www.buidlhub.com). Watch a video walkthrough of the process [here](https://youtu.be/ZCUfhMxFyAI).
-
+To automate adding a tip on a certain query ID by time or volatility, as well as scheduling other Tellor related tasks, we recommend \(and use\) [Buidlhub](https://www.buidlhub.com).
